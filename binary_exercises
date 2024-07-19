@@ -1,0 +1,42 @@
+
+
+KEY = 5
+
+def encrypt_file(filename):
+    file = open(filename, "r")
+    filedata = file.read()
+    crypted_data = ""
+    for ch in filedata:
+        num = ord(ch) ^ KEY
+        crypted_data += str(chr(num))
+    file.close()
+    file = open(filename, "w")
+    file.write(crypted_data)
+
+
+print("acutally did something!")
+
+def print_data(filename):
+    file = open(filename, "rb")
+    filedata = file.read()
+    print(filedata)
+
+
+def convert_to_opposite_binary(num, sib):
+    x = bin(num)[2:].zfill(sib)
+    new = ""
+    for c in x:
+        if c == "0":
+            new += "1"
+        else:
+            new += "0"
+    new = bin(int(new,2)+1)[2:]
+    print("The result :", new)
+
+
+def main():
+    # convert_to_opposite_binary(10, 8);
+    print("acutally did something!")
+
+if __name__ == '__main__':
+    main()
